@@ -102,7 +102,113 @@ This will generate
 npx prisma migrate dev --name init
 npx prisma generate
 ```
-###  a `.env` file with following variables -
+
+### 2. Supabase
+Supabase is used as the backend database (PostgreSQL) and auth (optionally).
+
+- Go to https://supabase.com/ and create a project.
+- Copy the project URL and anon/public key for use in your environment variables.
+
+### 3. Clerk
+Clerk handles user registration, login, and sessions.
+
+#### 🔧 Installation
+```base
+npm install @clerk/clerk-react
+```
+- Go to https://clerk.dev/ and create an app.
+- Get your Publishable Key and Secret Key from the Clerk dashboard.
+
+### 4. Inngest
+Used for background jobs and event-driven processing.
+#### 🔧 Installation
+```base
+npm install inngest @inngest/next
+```
+#### ⚙️ Usage
+- Create an account at https://www.inngest.com/
+- Copy your Inngest Signing Key and add it to your ```.env``` file.
+
+### 5. Arcjet
+Arcjet helps protect your API and prevent abuse.
+
+#### 🔧 Installation
+```base
+npm install arcjet
+```
+Visit https://arcjet.com/ and generate your ARCJET_API_KEY.
+
+### 6. Shadcn UI
+Used for beautifully styled, accessible UI components.
+#### 🔧 Installation
+```base
+npx shadcn-ui@latest init
+```
+- You’ll be prompted to configure Tailwind CSS and React.
+- After setup, a ```components/ui/``` folder will be created.
+
+### ⚙️ Usage
+You can now import UI components like:
+```js
+import { Button } from "@/components/ui/button"
+```
+
+### 7. 🔑 GEMINI_API_KEY
+#### 📌 What It Is:
+This is your API key for Google Gemini — a generative AI platform by Google (formerly part of Bard / PaLM 2). You use this to send prompts and receive AI-generated responses.
+
+#### 📦 Usage Example:
+If you're using Gemini via Google’s @google/generative-ai Node.js SDK:
+
+```base
+npm install @google/generative-ai
+```
+```js
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+const result = await model.generateContent("How do I manage my finances?");
+```
+#### 📄 How to Get It:
+1. Go to Google AI Studio.
+2. Click Get API Key from the settings or top right corner.
+3. Paste it into your ```.env```:
+```
+GEMINI_API_KEY=your_google_gemini_api_key_here
+```
+### 8. 🔑 RESEND_API_KEY
+#### 📌 What It Is:
+This is your API key for Resend — an email API platform for sending transactional or marketing emails via server-side apps.
+
+#### 📦 Usage Example:
+```bash
+npm install resend
+```
+```js
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+await resend.emails.send({
+  from: 'finance@finova.com',
+  to: 'diksha@example.com',
+  subject: 'Your Monthly Report',
+  html: '<p>Your budget is on point!</p>',
+});
+```
+#### 📄 How to Get It:
+1. Go to https://resend.com/
+2. Sign up → Go to Dashboard → API Keys → Generate Key.
+3. Add to your ```.env```:
+```
+RESEND_API_KEY=your_resend_api_key_here
+```
+
+### 🔐 Environment Variables
+Create a ```.env``` file in the root of your project and add the following:
 
 ```
 DATABASE_URL=
@@ -121,3 +227,28 @@ RESEND_API_KEY=
 
 ARCJET_KEY=
 ```
+
+### 📁 Folder Structure
+```text
+
+Finance-Management-Platform/
+├── app/                  # Next.js app routes
+├── components/           # Reusable components
+├── data/                 # Static/shared content
+├── hooks/                # Custom React hooks
+├── lib/                  # Utilities and helpers
+├── prisma/               # Prisma DB schema
+├── public/               # Static assets
+├── styles/               # Tailwind & global styles
+├── .env.example          # Sample env file
+└── README.md             # Project documentation
+```
+
+### 🚀 Running the Project
+Once you’ve completed all installations and ```.env``` setup:
+
+```bash
+npm run dev
+```
+Open your browser and visit:
+```http://localhost:3000```
