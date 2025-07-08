@@ -51,7 +51,57 @@ A powerful full-stack **Finance Management Platform** to help users seamlessly m
 
 ---
 
+---
 
+## 📦 Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+- [Node.js (v18+)](https://nodejs.org/)
+- [npm or yarn](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
+- A Supabase project
+- A Clerk account
+- Arcjet & Inngest accounts (free plans are enough)
+
+---
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/Dikshav07/Finance-Management-Platform.git
+cd Finance-Management-Platform
+```
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+## 🧪 Tool Installations & Setup
+### 1. Prisma
+Prisma is used to connect to and query your Supabase PostgreSQL database.
+
+#### 🔧 Installation
+```base
+npm install prisma --save-dev
+npx prisma init
+```
+This will generate 
+```base
+/prisma/schema.prisma
+```
+
+### ⚙️ Usage
+- Define your database schema in ```base prisma/schema.prisma ```
+- Run the following to generate and apply migrations:
+```base
+npx prisma migrate dev --name init
+npx prisma generate
+```
 ###  a `.env` file with following variables -
 
 ```
