@@ -1,6 +1,6 @@
-# FINOVA
+# 💸 FINOVA – Finance Management Platform
+A powerful full-stack **Finance Management Platform** to help users seamlessly manage their **income**, **expenses**, and **financial goals** in real-time with clean visuals and secure access. FINOVA is built using **Next.js**, **Prisma**, **Supabase**, **Clerk**, **Inngest**, **Arcjet**, and styled beautifully with **Tailwind CSS** and **Shadcn UI**.
 
-## Full Stack AI Fianace Platform with Next JS, Supabase, Tailwind, Prisma, Inngest, ArcJet, Shadcn UI 
 
 
 
