@@ -29,6 +29,8 @@ A powerful full-stack **Finance Management Platform** to help users seamlessly m
 - 📊 Real-time income and expense tracking
 - 📁 Database management with Prisma and Supabase
 - 🔄 Background job processing using Inngest
+- 📧 Transactional email integration using Resend API
+- 🧠 AI-powered financial assistant via Google Gemini
 - 🛡️ Security enhancement with Arcjet API protection
 - 🌈 Responsive design using Tailwind CSS and Shadcn UI
 - ⚡ Fast, scalable Next.js frontend
@@ -80,7 +82,8 @@ cd Finance-Management-Platform
 ```bash
 npm install
 ```
-
+---
+---
 ## 🧪 Tool Installations & Setup
 ### 1. Prisma
 Prisma is used to connect to and query your Supabase PostgreSQL database.
@@ -95,7 +98,7 @@ This will generate
 /prisma/schema.prisma
 ```
 
-### ⚙️ Usage
+#### ⚙️ Usage
 - Define your database schema in ```base prisma/schema.prisma ```
 - Run the following to generate and apply migrations:
 ```base
@@ -147,7 +150,7 @@ npx shadcn-ui@latest init
 - You’ll be prompted to configure Tailwind CSS and React.
 - After setup, a ```components/ui/``` folder will be created.
 
-### ⚙️ Usage
+#### ⚙️ Usage
 You can now import UI components like:
 ```js
 import { Button } from "@/components/ui/button"
@@ -206,8 +209,9 @@ await resend.emails.send({
 ```
 RESEND_API_KEY=your_resend_api_key_here
 ```
-
-### 🔐 Environment Variables
+---
+---
+## 🔐 Environment Variables
 Create a ```.env``` file in the root of your project and add the following:
 
 ```
@@ -227,8 +231,9 @@ RESEND_API_KEY=
 
 ARCJET_KEY=
 ```
-
-### 📁 Folder Structure
+---
+---
+## 📁 Folder Structure
 ```text
 
 Finance-Management-Platform/
@@ -243,8 +248,9 @@ Finance-Management-Platform/
 ├── .env.example          # Sample env file
 └── README.md             # Project documentation
 ```
-
-### 🚀 Running the Project
+---
+---
+## 🚀 Running the Project
 Once you’ve completed all installations and ```.env``` setup:
 
 ```bash
@@ -252,3 +258,6 @@ npm run dev
 ```
 Open your browser and visit:
 ```http://localhost:3000```
+
+
+---
