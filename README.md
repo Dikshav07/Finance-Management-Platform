@@ -53,7 +53,6 @@ A powerful full-stack **Finance Management Platform** to help users seamlessly m
 
 ---
 
----
 
 ## 📦 Prerequisites
 
@@ -68,7 +67,6 @@ Before running the project, ensure you have the following installed:
 
 ---
 
----
 
 ## ⚙️ Getting Started
 
